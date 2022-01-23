@@ -1,39 +1,10 @@
-Bowling Challenge in Ruby
-=================
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday week
+# Bowling Challenge in Ruby
 
 ## The Task
 
-**THIS IS NOT A BOWLING GAME, IT IS A BOWLING SCORECARD PROGRAM. DO NOT GENERATE RANDOM ROLLS. THE USER INPUTS THE ROLLS.**
+This app will count and sum the scores of a bowling game for one player.
 
-Count and sum the scores of a bowling game for one player. For this challenge, you do _not_ need to build a web app with a UI, instead, just focus on the logic for bowling (you also don't need a database). Next end-of-unit challenge, you will have the chance to translate the logic to Javascript and build a user interface.
-
-A bowling game consists of 10 frames in which the player tries to knock down the 10 pins. In every frame the player can roll one or two times. The actual number depends on strikes and spares. The score of a frame is the number of knocked down pins plus bonuses for strikes and spares. After every frame the 10 pins are reset.
-
-As usual please start by
-
-* Forking this repo
-
-* Finally submit a pull request before Monday week at 9am with your solution or partial solution.  However much or little amount of code you wrote please please please submit a pull request before Monday week at 9am. 
-
-___STRONG HINT, IGNORE AT YOUR PERIL:___ Bowling is a deceptively complex game. Careful thought and thorough diagramming — both before and throughout — will save you literal hours of your life.
-
-## Focus for this challenge
-The focus for this challenge is to write high-quality code.
-
-In order to do this, you may pay particular attention to the following:
-* Using diagramming to plan your approach to the challenge
-* TDD your code
-* Focus on testing behaviour rather than state
-* Commit often, with good commit messages
-* Single Responsibility Principle and encapsulation
-* Clear and readable code
-
-## Bowling — how does it work?
+## Bowling — game structure
 
 ### Strikes
 
@@ -47,8 +18,10 @@ The player has a spare if the knocks down all 10 pins with the two rolls of a fr
 
 If the player rolls a strike or spare in the 10th frame they can roll the additional balls for the bonus. But they can never roll more than 3 balls in the 10th frame. The additional rolls only count for the bonus not for the regular frame count.
 
-    10, 10, 10 in the 10th frame gives 30 points (10 points for the regular first strike and 20 points for the bonus).
-    1, 9, 10 in the 10th frame gives 20 points (10 points for the regular spare and 10 points for the bonus).
+```
+10, 10, 10 in the 10th frame gives 30 points (10 points for the regular first strike and 20 points for the bonus).
+1, 9, 10 in the 10th frame gives 20 points (10 points for the regular spare and 10 points for the bonus).
+```
 
 ### Gutter Game
 
@@ -62,4 +35,76 @@ In the image below you can find some score examples.
 
 More about ten pin bowling here: http://en.wikipedia.org/wiki/Ten-pin_bowling
 
-![Ten Pin Score Example](images/example_ten_pin_scoring.png)
+<details><summary><b>Ten pin score example</b></summary>
+![Ten Pin Score Example](images/example_ten_pin_scoring.png)</details><br>
+
+## Approach
+
+The focus for this challenge is to write high-quality code by applying the following:
+
+- Use diagramming to plan your approach.
+- TDD your code
+- Focus on testing behaviour rather than state
+- Commit often, with good commit messages
+- Single Responsibility Principle and encapsulation
+- Clear and readable code
+
+<details><summary><b>User Stories</b></h2></summary>
+
+```
+1)
+As a bowler
+so that I can keep track of my score
+I'd like to record the the number of pins I knock down after a roll.
+
+2)
+As a bowler
+so that I can increase my score
+I'd like to record 2 rolls within a frame.
+
+3)
+As a bowler
+so that I can recieve bonuses
+I'd like to record a spare or a strike
+
+4)
+As a bowler
+so that I track an entire game
+I'd like to record the my scores within 10 frames.
+
+5)
+As a bowler
+so that I can maximise my score
+I'd like my score to include bonuses if I get a spare or a strike.
+
+6)
+As a bowler
+so that I can see the result of a game
+I'd like to see my final score.
+
+7)
+As a bowler
+so that I add extra points to my game
+I'd like record any bonus roll I have in the 10th frame.
+
+
+8)
+As a bowler
+so that I know what score I have
+I'd like to see my current total score.
+
+9)
+As a bowler
+so that I know how far into a game I am
+I'd like to see the number of the frame and roll I'm currenty playing.
+```
+</details><br>
+
+## Getting started
+
+### Installation
+
+### Usage example
+
+## Testing
+
