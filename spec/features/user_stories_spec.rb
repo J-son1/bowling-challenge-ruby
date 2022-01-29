@@ -5,6 +5,6 @@ describe "User Stories" do
   it 'is an empty scorecard' do
     scorecard = Scorecard.new
     
-    expect { scorecard.score }.to_not raise_error
+    expect { scorecard.final_score }.to_not raise_error
   end
 end
