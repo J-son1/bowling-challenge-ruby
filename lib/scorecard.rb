@@ -5,4 +5,8 @@ class Scorecard
   def initialize
     @score = 0
   end
+
+  def input_score(score)
+    @score = score
+  end
 end
