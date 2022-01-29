@@ -54,46 +54,51 @@ The focus for this challenge is to write high-quality code by applying the follo
 ```
 1)
 As a bowler
+so that I can start a game of bowling
+I'd like an empty scoresheet
+
+2)
+As a bowler
 so that I can keep track of my score
 I'd like to record the the number of pins I knock down after a roll.
 
-2)
+3)
 As a bowler
 so that I can increase my score
 I'd like to record 2 rolls within a frame.
 
-3)
+4)
 As a bowler
 so that I can recieve bonuses
 I'd like to record a spare or a strike
 
-4)
+5)
 As a bowler
 so that I track an entire game
 I'd like to record the my scores within 10 frames.
 
-5)
+6)
 As a bowler
 so that I can maximise my score
 I'd like my score to include bonuses if I get a spare or a strike.
 
-6)
+7)
 As a bowler
 so that I can see the result of a game
 I'd like to see my final score.
 
-7)
+8)
 As a bowler
 so that I add extra points to my game
 I'd like record any bonus roll I have in the 10th frame.
 
 
-8)
+9)
 As a bowler
 so that I know what score I have
 I'd like to see my current total score.
 
-9)
+10)
 As a bowler
 so that I know how far into a game I am
 I'd like to see the number of the frame and roll I'm currenty playing.
