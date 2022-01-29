@@ -7,6 +7,6 @@ class Scorecard
   end
 
   def input_score(score)
-    @score = score
+    @score = score.sum
   end
 end

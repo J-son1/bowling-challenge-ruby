@@ -7,10 +7,10 @@ describe Scorecard do
     expect(scorecard.score).to eq(0)
   end
 
-  it 'returns the a score after user input' do
-    score = 1
+  it 'returns a score from 1 frame' do
+    score = [1, 1]
     scorecard.input_score(score)
 
-    expect(scorecard.score).to_not eq(0)
+    expect(scorecard.score).to eq(2)
   end
 end
