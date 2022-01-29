@@ -8,9 +8,17 @@ describe Scorecard do
   end
 
   it 'returns a score from 1 frame' do
-    score = [1, 1]
+    score = [[1, 1]]
     scorecard.input_score(score)
 
     expect(scorecard.score).to eq(2)
   end
+
+  it 'returns a score from 10 frames' do
+    score = [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]]
+    scorecard.input_score(score)
+
+    expect(scorecard.score).to eq(20)
+  end
+
 end

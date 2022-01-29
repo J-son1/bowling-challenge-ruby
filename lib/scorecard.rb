@@ -6,7 +6,10 @@ class Scorecard
     @score = 0
   end
 
-  def input_score(score)
-    @score = score.sum
+  def input_score(frames)
+    frames.each { |frame| 
+      @score += frame.sum
+    }.flatten.reduce(:+)
   end
 end
+
