@@ -7,9 +7,18 @@ class Scorecard
   end
 
   def input_score(frames)
-    frames.each { |frame| 
+    frames.each_with_index do |frame, i| 
+      frame_number = i + 1
+
+      # Adds the bonus for a spare
+      if frame.length == 2 and frame.sum == 10 and frame_number != 10
+        @score = frames[i + 1][0]
+      end
+
       @score += frame.sum
-    }.flatten.reduce(:+)
+    end
+      .flatten.reduce(:+)
+
   end
 end
 

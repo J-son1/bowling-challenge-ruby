@@ -21,4 +21,10 @@ describe Scorecard do
     expect(scorecard.score).to eq(20)
   end
 
+  it 'adds the bonus for a spare when not the 10th frame' do
+    score = [[1, 9], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 9]]
+    scorecard.input_score(score)
+  
+    expect(scorecard.score).to eq(37)
+  end
 end
