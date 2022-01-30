@@ -23,17 +23,17 @@ describe Scorecard do
 
   context 'when not on the 10th frame' do
     it 'adds the bonus for a spare' do
-      scores = [[1, '/'], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, '/']]
-      scorecard.input_scores(scores)
-    
-      expect(scorecard.final_score).to eq(37)
-    end
-
-    it 'adds the bonus for a strike' do
-      scores = [['X'], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], ['X']]
+      scores = [[1, '/'], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, '/', 1]]
       scorecard.input_scores(scores)
     
       expect(scorecard.final_score).to eq(38)
+    end
+
+    it 'adds the bonus for a strike' do
+      scores = [['X'], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], ['X', 1, 1]]
+      scorecard.input_scores(scores)
+    
+      expect(scorecard.final_score).to eq(40)
     end
   end
 
@@ -55,5 +55,12 @@ describe Scorecard do
         expect(scorecard.final_score).to eq(58)
       end
     end
+  end
+
+  it 'returns a perfect game' do
+    scores = [['X'], ['X'], ['X'], ['X'], ['X'], ['X'], ['X'], ['X'], ['X'], ['X', 'X', 'X']]
+    scorecard.input_scores(scores)
+  
+    expect(scorecard.final_score).to eq(300)
   end
 end

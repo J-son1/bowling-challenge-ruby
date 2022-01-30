@@ -30,20 +30,25 @@ class Scorecard
     scores = scores.each_with_index do |frame, i|
       current_frame = i + 1
 
-      if frame[FIRST_ROLL] == 10
-        # Adds the bonus for a strike
-        if current_frame != 10
-          if scores[current_frame + 1][FIRST_ROLL] == 10
-            @final_score += 20 if scores[cureent_frames + 2][FIRST_ROLL] == 10
+      # Adds the bonus for a strike
+      if frame[FIRST_ROLL] == 10 && current_frame != 10
+        if current_frame == 9
+          # Adds the first and second roll in 10th frame
+          @final_score += scores[i + 1][FIRST_ROLL] + scores[i + 1][SECOND_ROLL]
+        elsif scores[i + 1][FIRST_ROLL] == 10
+          # Adds bonus if the next 2 rolls are strikes
+          if scores[i + 2][FIRST_ROLL] == 10
+            @final_score += 20 
           else
-            @final_score += scores[current_frame + 1][FIRST_ROLL] + scores[current_frame + 1][SECOND_ROLL]
+            @final_score += 10 + scores[i + 2][FIRST_ROLL]
           end
+        else
+          # Adds bonus from the next 2 rolls in the next frame
+          @final_score += scores[i + 1][FIRST_ROLL] + scores[i + 1][SECOND_ROLL]
         end
       # Adds the bonus for a spare
-      elsif frame[FIRST_ROLL] + frame[SECOND_ROLL] == 10
-        if current_frame != 10
-          @final_score += scores[current_frame + 1][FIRST_ROLL]
-        end
+      elsif frame[FIRST_ROLL] + frame[SECOND_ROLL] == 10 && current_frame != 10
+        @final_score += scores[i + 1][FIRST_ROLL]
       end
 
       @final_score += frame.sum
