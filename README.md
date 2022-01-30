@@ -52,56 +52,25 @@ The focus for this challenge is to write high-quality code by applying the follo
 <details><summary><b>User Stories</b></h2></summary>
 
 ```
-1)
 As a bowler
-so that I can start a game of bowling
-I'd like an empty scoresheet
+so that I can start a new game
+I'd like an empty scorecard
 
-2)
 As a bowler
-so that I can keep track of my score
-I'd like to record the the number of pins I knock down after a roll.
+so that I know how well I've played
+I'd like to input my scores and see the result
 
-3)
 As a bowler
-so that I can increase my score
-I'd like to record 2 rolls within a frame.
+so that I can increase my score for a frame
+I'd like to receive a bonus for bowling a spare
 
-4)
-As a bowler
-so that I can recieve bonuses
-I'd like to record a spare or a strike
-
-5)
-As a bowler
-so that I track an entire game
-I'd like to record the my scores within 10 frames.
-
-6)
 As a bowler
 so that I can maximise my score
-I'd like my score to include bonuses if I get a spare or a strike.
+I'd like to receive a bonus for bowling a strike
 
-7)
 As a bowler
-so that I can see the result of a game
-I'd like to see my final score.
-
-8)
-As a bowler
-so that I add extra points to my game
-I'd like record any bonus roll I have in the 10th frame.
-
-
-9)
-As a bowler
-so that I know what score I have
-I'd like to see my current total score.
-
-10)
-As a bowler
-so that I know how far into a game I am
-I'd like to see the number of the frame and roll I'm currenty playing.
+so that I can score highly or bowl a perfect game
+I'd like spare and stike bonuses to apply in the 10th frame
 ```
 </details><br>
 

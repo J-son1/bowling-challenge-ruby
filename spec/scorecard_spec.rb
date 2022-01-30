@@ -27,4 +27,11 @@ describe Scorecard do
   
     expect(scorecard.final_score).to eq(37)
   end
+
+  it 'adds the bonus for a strike when not the 10th frame' do
+    scores = [['X'], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], ['X']]
+    scorecard.input_scores(scores)
+  
+    expect(scorecard.final_score).to eq(38)
+  end
 end
