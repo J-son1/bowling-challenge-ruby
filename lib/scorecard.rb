@@ -17,9 +17,13 @@ class Scorecard
   def calculate_score(scores)
     # Converts a strike or spare to an integer
     scores = scores.map do |frame|
-      frame[FIRST_ROLL] = 10 if frame[FIRST_ROLL] == 'X'
-      frame[SECOND_ROLL] = 10 - frame[FIRST_ROLL] if frame[SECOND_ROLL] == '/'
-      frame
+      frame.each_with_index do |roll, current_roll|
+        if roll == 'X'
+          frame[current_roll] = 10 
+        elsif  roll == '/'
+          frame[SECOND_ROLL] = 10 - frame[FIRST_ROLL]
+        end
+      end
     end
 
     # Calculates score
@@ -36,10 +40,7 @@ class Scorecard
           end
         end
       # Adds the bonus for a spare
-      elsif frame.sum == 10
-        # Converts the symbol for a spare into an int
-        frame[SECOND_ROLL] = 10 - frame[FIRST_ROLL]
-
+      elsif frame[FIRST_ROLL] + frame[SECOND_ROLL] == 10
         if current_frame != 10
           @final_score += scores[current_frame + 1][FIRST_ROLL]
         end
@@ -47,7 +48,7 @@ class Scorecard
 
       @final_score += frame.sum
     end
-    
+
     scores.flatten.reduce(:+)
   end
 end
